@@ -17,6 +17,8 @@
  <bean id="ResponseStatus" class="com.pramati.springrest.model.ResponseStatus "/>
  <bean id="PullDocRequestElement" class="com.pramati.springrest.model.PullDocRequestElement "/>
  
+ <bean id="FileReaderController" class="com.pramati.springrest.controller.FileReaderController "/>
+ 
  
 <!--  <bean id="sessionFactory"
 		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">

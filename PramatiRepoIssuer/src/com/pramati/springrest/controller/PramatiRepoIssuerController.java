@@ -31,6 +31,7 @@ public class PramatiRepoIssuerController {
 	@Autowired
 	private ResponseStatus responseStatusObj ;
 	
+	@Autowired
 	private FileReaderController fileReaderController;
 	
 	final static Logger logger = Logger.getLogger(PramatiRepoIssuerController.class);
@@ -42,7 +43,6 @@ public class PramatiRepoIssuerController {
 	@RequestMapping(value="/documentDetails", method = RequestMethod.POST, consumes = "application/xml",
 		    produces = "application/xml")
 	public PullDocResponse getDocumentDetails(@RequestBody PullDocRequestElement pullDocRequestElementObj){
-		
 		logger.info("Received payload obj: " + pullDocRequestElementObj);
 		String receivedURI = "";
 		if(pullDocRequestElementObj.getDocDetails() !=null){
@@ -65,7 +65,6 @@ public class PramatiRepoIssuerController {
 		
 		String encodedContent = "";
 		if(documentName!= null && !documentName.isEmpty()) {
-			fileReaderController = new FileReaderController();
 			try {
 				responseStatusObj.setStatusCode("");
         		responseStatusObj.setStatus("1");
